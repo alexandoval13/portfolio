@@ -1,7 +1,5 @@
 import { Metadata } from 'next';
-import { ThemeProvider } from '@mui/material/styles';
 import { Lobster } from 'next/font/google';
-import theme from '../theme';
 
 export const metadata: Metadata = {
   title: 'Alexandra Sandoval | Full-Stack Software Engineer',
@@ -17,9 +15,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <ThemeProvider theme={theme}>
-        <body className={lobster.className}>{children}</body>
-      </ThemeProvider>
+      <body className={lobster.className}>{children}</body>
     </html>
   );
 }
