@@ -9,6 +9,14 @@ export default function Home() {
         {`Hi, my name is Alexandra Sandoval.`}
         <br />
         {`I'm a Full-Stack Software Engineer.`}
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        {`And I think Sebastián is sweet, and kind, and smart, and so fucking incredible. But he can beat you up`}
       </h1>
     </div>
   );
