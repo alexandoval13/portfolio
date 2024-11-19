@@ -1,11 +1,11 @@
 import { Metadata } from 'next';
 // import { Lobster } from 'next/font/google';
-import localFont from 'next/font/local';
+// import localFont from 'next/font/local';
 
-const geist = localFont({
-  src: './fonts/GeistMonoVF.woff',
-  weight: '400',
-});
+// const geist = localFont({
+//   src: './fonts/GeistMonoVF.woff',
+//   weight: '400',
+// });
 
 export const metadata: Metadata = {
   title: 'Alexandra Sandoval | Full-Stack Software Engineer',
@@ -21,7 +21,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={geist.className}>{children}</body>
+      <head>
+        <style type="text/css">
+          {`@import
+          url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+            body {
+              font-family: "Lobster";
+            }
+          `}
+        </style>
+      </head>
+      <body>{children}</body>
     </html>
   );
 }
