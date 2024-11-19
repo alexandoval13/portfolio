@@ -6,9 +6,9 @@ export default function Home() {
     <div className={styles.page}>
       <title>Alexandra Sandoval | Full-Stack Software Engineer</title>
       <h1>
-        Hi, my name is Alexandra Sandoval.
+        {`Hi, my name is Alexandra Sandoval.`}
         <br />
-        I'm a Full-Stack Software Engineer.
+        {`I'm a Full-Stack Software Engineer.`}
       </h1>
     </div>
   );
