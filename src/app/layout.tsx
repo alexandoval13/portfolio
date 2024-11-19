@@ -2,8 +2,8 @@ import { Metadata } from 'next';
 // import { Lobster } from 'next/font/google';
 import localFont from 'next/font/local';
 
-const lobster = localFont({
-  src: './fonts/Lobster.woff',
+const geist = localFont({
+  src: './fonts/GeistMonoVF.woff',
   weight: '400',
 });
 
@@ -21,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={lobster.className}>{children}</body>
+      <body className={geist.className}>{children}</body>
     </html>
   );
 }
