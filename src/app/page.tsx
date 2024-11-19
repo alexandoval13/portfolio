@@ -10,7 +10,7 @@ export default function Home() {
         <br />
         {`I'm a Full-Stack Software Engineer.`}
         <br />
-        {`And I think Sebastián is sweet, and kind, and smart, and so fucking incredible. But he can beat you up.`}
+        {`And I think Sebastián is sweet, and kind, and smart, and so fucking incredible. But he can and will beat you up... for real.`}
       </h1>
     </div>
   );

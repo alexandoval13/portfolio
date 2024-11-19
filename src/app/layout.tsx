@@ -4,12 +4,12 @@ import localFont from 'next/font/local';
 
 const lobster = localFont({
   src: './fonts/Lobster.woff',
-  weight: '100 900',
+  weight: '400',
 });
 
 export const metadata: Metadata = {
   title: 'Alexandra Sandoval | Full-Stack Software Engineer',
-  description: 'Portfolio',
+  description: `Alexandra's Portfolio Site`,
 };
 
 // const lobster = Lobster({ weight: '400', preload: false });
