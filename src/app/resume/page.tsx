@@ -1,18 +1,18 @@
 'use client';
-// import DynamicComponentWithNoSSR from '../components/DynamicComponentWithNoSSR';
-// import PdfViewer from '../components/PdfViewer';
 import dynamic from 'next/dynamic';
 
-const Resume = () => {
-  const DynamicPdfViewer = dynamic(() => import('../components/PdfViewer'), {
-    ssr: false,
-  });
+// Dynamically import the Resume component with SSR disabled
+const DynamicResume = dynamic(() => import('../components/Resume'), {
+  ssr: false,
+});
 
+const ResumePage = () => {
   return (
     <div>
-      <DynamicPdfViewer path="../assets/alexandra-sandoval-resume.pdf" />
+      <h1>My Resume</h1>
+      <DynamicResume />
     </div>
   );
 };
 
-export default Resume;
+export default ResumePage;
