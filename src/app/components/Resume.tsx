@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 import { Document, Page } from 'react-pdf';
 
 import { pdfjs } from 'react-pdf';
-pdfjs.GlobalWorkerOptions.workerSrc = '/pdf.worker.min.js';
 
 // Set the workerSrc globally for pdf.js
 pdfjs.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.worker.min.js`;
@@ -22,7 +21,7 @@ const Resume = () => {
       <h1>My Resume</h1>
       {/* Document component renders the PDF */}
       <Document
-        file="/alexandra-sandoval-resume.pdf" // Path to the PDF file in the public folder
+        file="public/alexandra-sandoval-resume.pdf" // Path to the PDF file in the public folder
         onLoadSuccess={onDocumentLoadSuccess}
       >
         {/* Render one page */}
