@@ -1,17 +1,38 @@
-// import Image from 'next/image';
-import styles from './page.module.css';
+'use client';
+
+import { useState } from 'react';
 
 export default function Home() {
+  const [name, setName] = useState<string | null>(null);
+
+  const handleChange = (e: React.BaseSyntheticEvent) => {
+    console.log({ eVal: e.target.value });
+    setName(e.target.value);
+  };
+
+  const handleSubmitHello = () => {
+    const nameL = name?.toLowerCase();
+    if (nameL && (nameL === 'sebastian' || nameL === 'sebastián')) {
+      alert(
+        `Holaaa :) I think you're sweet, and kind, and smart, and so fucking incredible. But i know you can and will beat someone up... for real.`
+      );
+    } else {
+      alert(`Hello${(name && ` ${name}`) || ''}`);
+    }
+  };
+
   return (
-    <div className={styles.page}>
+    <div>
       <title>Alexandra Sandoval | Full-Stack Software Engineer</title>
-      <h1>
-        {`Hi, my name is Alexandra Sandoval.`}
-        <br />
-        {`I'm a Full-Stack Software Engineer.`}
-        <br />
-        {`And I think Sebastián is sweet, and kind, and smart, and so fucking incredible. But he can and will beat you up... for real.`}
-      </h1>
+      <main>
+        <h1>
+          {`Hi, my name is Alexandra Sandoval.`}
+          <br />
+          {`I'm a Full-Stack Software Engineer.`}
+        </h1>
+        <input placeholder="name" onChange={handleChange}></input>
+        <button onClick={handleSubmitHello}>Hello</button>
+      </main>
     </div>
   );
 }
