@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { useState } from 'react';
 
 export default function Home() {
@@ -30,8 +31,11 @@ export default function Home() {
           <br />
           {`I'm a Full-Stack Software Engineer.`}
         </h1>
-        <input placeholder="name" onChange={handleChange}></input>
+        <input placeholder="Name" onChange={handleChange}></input>
         <button onClick={handleSubmitHello}>Hello</button>
+        <div>
+          <Link href="/resume">View Resume</Link>
+        </div>
       </main>
     </div>
   );
