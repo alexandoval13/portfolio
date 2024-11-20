@@ -34,7 +34,7 @@ export default function Home() {
         <input placeholder="Name" onChange={handleChange}></input>
         <button onClick={handleSubmitHello}>Hello</button>
         <div>
-          <Link href="/src/resume">View Resume</Link>
+          <Link href="/resume">View Resume</Link>
         </div>
       </main>
     </div>
