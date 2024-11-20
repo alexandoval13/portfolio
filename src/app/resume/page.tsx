@@ -10,7 +10,7 @@ const Resume = () => {
 
   return (
     <div>
-      <DynamicPdfViewer path="/AlexandraSandoval_Resume.pdf" />
+      <DynamicPdfViewer path="/alexandra-sandoval-resume.pdf" />
     </div>
   );
 };
