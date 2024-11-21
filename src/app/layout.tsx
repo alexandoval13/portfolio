@@ -23,10 +23,7 @@ export default function RootLayout({
           `}
         </style>
       </head>
-      <body>
-        <div></div>
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

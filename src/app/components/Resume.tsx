@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import { Document, Page } from 'react-pdf';
 
 import { pdfjs } from 'react-pdf';
@@ -9,26 +9,27 @@ import { pdfjs } from 'react-pdf';
 pdfjs.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.worker.min.js`;
 
 const Resume = () => {
-  const [numPages, setNumPages] = useState<number | null>(null);
-  const [pageNumber, setPageNumber] = useState<number>(1);
-
-  const onDocumentLoadSuccess = ({ numPages }: { numPages: number }) => {
-    setNumPages(numPages);
+  const onDocumentLoadSuccess = () => {
+    console.log('success');
   };
 
   return (
     <div>
-      <h1>My Resume</h1>
-      {/* Document component renders the PDF */}
       <Document
-        file="public/alexandra-sandoval-resume.pdf" // Path to the PDF file in the public folder
+        file={'../../../public/alexandra-sandoval-resume.pdf'}
         onLoadSuccess={onDocumentLoadSuccess}
       >
-        {/* Render one page */}
+        <Page pageNumber={1} />
+      </Document>
+      {/* <h1>My Resume</h1>
+
+      <Document
+        file="/alexandra-sandoval-resume.pdf" // Path to the PDF file in the public folder
+        onLoadSuccess={onDocumentLoadSuccess}
+      >
         <Page pageNumber={pageNumber} />
       </Document>
 
-      {/* Pagination controls */}
       <div>
         <button
           disabled={pageNumber === 1}
@@ -43,7 +44,7 @@ const Resume = () => {
         >
           Next
         </button>
-      </div>
+      </div> */}
     </div>
   );
 };
