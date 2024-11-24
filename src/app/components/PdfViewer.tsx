@@ -48,7 +48,7 @@ const PdfViewer: React.FC<PdfViewerProps> = ({ path }) => {
     };
 
     renderPDF();
-  }, []);
+  });
 
   return <canvas ref={canvasRef} />;
 };
