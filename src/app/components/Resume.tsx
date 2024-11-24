@@ -1,12 +1,24 @@
 'use client';
 
 import React from 'react';
-import { Document, Page } from 'react-pdf';
+import { Document, Page, pdfjs } from 'react-pdf';
 
-import { pdfjs } from 'react-pdf';
+pdfjs.GlobalWorkerOptions.workerSrc =
+  'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.4.168/pdf.worker.min.mjs';
 
-// Set the workerSrc globally for pdf.js
-pdfjs.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.worker.min.js`;
+// import { worker } from 'pdfjs-dist/webpack';
+
+// pdfjs.GlobalWorkerOptions.workerSrc = worker;
+
+// import pdfjsWorker from '../../../node_modules/react-pdf/node_modules/pdfjs-dist/build/pdf.worker.min.mjs';
+// //3.11.174 or 4.4.168
+
+// pdfjs.GlobalWorkerOptions.workerSrc = pdfjsWorker;
+
+// pdfjs.GlobalWorkerOptions.workerSrc = new URL(
+//   'pdfjs-dist/build/pdf.worker.min.js',
+//   import.meta.url
+// ).toString();
 
 const Resume = () => {
   const onDocumentLoadSuccess = () => {
@@ -16,35 +28,11 @@ const Resume = () => {
   return (
     <div>
       <Document
-        file={'../../../public/alexandra-sandoval-resume.pdf'}
+        file={window.location.origin + '/AlexandraSandoval_Resume.pdf'}
         onLoadSuccess={onDocumentLoadSuccess}
       >
         <Page pageNumber={1} />
       </Document>
-      {/* <h1>My Resume</h1>
-
-      <Document
-        file="/alexandra-sandoval-resume.pdf" // Path to the PDF file in the public folder
-        onLoadSuccess={onDocumentLoadSuccess}
-      >
-        <Page pageNumber={pageNumber} />
-      </Document>
-
-      <div>
-        <button
-          disabled={pageNumber === 1}
-          onClick={() => setPageNumber(pageNumber - 1)}
-        >
-          Previous
-        </button>
-        <span>{`Page ${pageNumber} of ${numPages}`}</span>
-        <button
-          disabled={pageNumber === numPages}
-          onClick={() => setPageNumber(pageNumber + 1)}
-        >
-          Next
-        </button>
-      </div> */}
     </div>
   );
 };
