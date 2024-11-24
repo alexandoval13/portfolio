@@ -28,7 +28,7 @@ const Resume = () => {
   return (
     <div>
       <Document
-        file={window.location.origin + '/AlexandraSandoval_Resume.pdf'}
+        file={'/AlexandraSandoval-Resume.pdf'}
         onLoadSuccess={onDocumentLoadSuccess}
       >
         <Page pageNumber={1} />
