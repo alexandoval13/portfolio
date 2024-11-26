@@ -2,6 +2,8 @@
 
 // import Link from 'next/link';
 import { useState } from 'react';
+import { ThemeProvider, Typography } from '@mui/material';
+import theme from './theme/theme';
 
 export default function Home() {
   const [name, setName] = useState<string | null>(null);
@@ -26,16 +28,21 @@ export default function Home() {
     <div>
       <title>Alexandra Sandoval | Full-Stack Software Engineer</title>
       <main>
-        <h1>
-          {`Hi, my name is Alexandra Sandoval.`}
-          <br />
-          {`I'm a Full-Stack Software Engineer.`}
-        </h1>
-        <input placeholder="Name" onChange={handleChange}></input>
-        <button onClick={handleSubmitHello}>Hello</button>
-        {/* <div>
+        <ThemeProvider theme={theme}>
+          <Typography
+            variant={'h1'}
+            // sx={{ color: theme.palette.primary.main }}
+          >{`Hello,`}</Typography>
+
+          <Typography variant="h2">
+            {`My name is Alexandra Sandoval, I'm a Full-Stack Software Engineer.`}
+          </Typography>
+          <input placeholder="Name" onChange={handleChange}></input>
+          <button onClick={handleSubmitHello}>Hello</button>
+          {/* <div>
           <Link href="/resume">View Resume</Link>
-        </div> */}
+          </div> */}
+        </ThemeProvider>
       </main>
     </div>
   );

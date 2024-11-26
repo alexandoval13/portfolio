@@ -13,14 +13,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <style type="text/css">
+        <style>
           {`@import
-          url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
-
-            body {
-              font-family: "Lobster";
-            }
-          `}
+          url('https://fonts.googleapis.com/css2?family=Carlito:ital,wght@0,400;0,700;1,400;1,700&family=Lobster&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap');`}
         </style>
       </head>
       <body>{children}</body>
